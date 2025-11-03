@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar for a more modern look */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #F7FAFC;
+}
+::-webkit-scrollbar-thumb {
+    background: #0F2B46;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #1F6F5B;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* Style for featured pricing card */
+.featured-card {
+    transform: scale(1.05);
+    border-color: #6FB1FF;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+/* Basic styles for blog post content as a fallback for missing prose plugin */
+.blog-content h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    color: #0F2B46;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+.blog-content p, .blog-content ul {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    margin-bottom: 1.25em;
+}
+.blog-content ul {
+    list-style-position: inside;
+    list-style-type: disc;
+    padding-left: 1em;
+}
+.blog-content li {
+    margin-bottom: 0.5em;
+}
+.blog-content a {
+    color: #6FB1FF;
+    text-decoration: underline;
+}
