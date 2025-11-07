@@ -50,6 +50,7 @@ const App: React.FC = () => {
           <Route path="a-propos" element={<AboutPage />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="*" element={<NotFoundPage />} />
+		  <Route path="/merci" element={<MerciPage />} />
         </Route>
       </Routes>
     </HashRouter>

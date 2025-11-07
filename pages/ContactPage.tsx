@@ -55,40 +55,53 @@ const ContactPage: React.FC = () => {
                         <p className="text-xl text-secondary mb-8">{intro}</p>
                     </div>
                     
-                    <form 
-                        action="https://formspree.io/f/your-endpoint"  // Remplace par ton endpoint Formspree (ex. : https://formspree.io/f/xabc1234)
-                        method="POST" 
-                        className="space-y-6"
-                        onSubmit={handleSubmit}
-                    >
-                        {form.fields.map((field: FormField) => (
-                            <div key={field.id}>
-                                <label htmlFor={field.id} className="block text-sm font-medium text-secondary mb-1">
-                                    {field.label}
-                                </label>
-                                {renderField(field)}
-                            </div>
-                        ))}
+              <form 
+    action="https://formsubmit.co/contact@oisansexpertia.com" 
+    method="POST"
+    className="space-y-6"
+>
+    {/* Champ caché pour éviter le spam */}
+    <input type="text" name="_honey" style={{display: 'none'}} />
+    <input type="hidden" name="_captcha" value="false" />
+    <input type="hidden" name="_next" value="https://oisansexpertia.com/merci" />
 
-                        <div className="text-center text-xs text-neutralDark mb-4">
-                            <p>En soumettant ce formulaire, vous acceptez notre politique de confidentialité. Vos données seront traitées de manière sécurisée et ne seront pas partagées.</p>
-                        </div>
+    <div>
+        <label className="block text-sm font-medium text-secondary mb-1">Nom</label>
+        <input 
+            type="text" 
+            name="name" 
+            required 
+            className="w-full px-4 py-3 rounded-md bg-neutralLight border border-highlight focus:outline-none focus:ring-2 focus:ring-primary"
+        />
+    </div>
 
-                        <button 
-                            type="submit"
-                            disabled={formStatus === 'submitting'}
-                            className="w-full bg-primary text-white font-bold py-3 px-4 rounded-md hover:bg-secondary transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                        >
-                            {formStatus === 'submitting' ? 'Envoi en cours...' : form.button_label}
-                        </button>
+    <div>
+        <label className="block text-sm font-medium text-secondary mb-1">Email</label>
+        <input 
+            type="email" 
+            name="email" 
+            required 
+            className="w-full px-4 py-3 rounded-md bg-neutralLight border border-highlight focus:outline-none focus:ring-2 focus:ring-primary"
+        />
+    </div>
 
-                        {formStatus === 'success' && (
-                            <p className="text-green-600 text-center mt-4">Message envoyé avec succès ! Nous vous contacterons bientôt.</p>
-                        )}
-                        {formStatus === 'error' && (
-                            <p className="text-red-600 text-center mt-4">Erreur lors de l'envoi. Veuillez réessayer ou nous contacter directement.</p>
-                        )}
-                    </form>
+    <div>
+        <label className="block text-sm font-medium text-secondary mb-1">Message</label>
+        <textarea 
+            name="message" 
+            required 
+            rows={5}
+            className="w-full px-4 py-3 rounded-md bg-neutralLight border border-highlight focus:outline-none focus:ring-2 focus:ring-primary"
+        ></textarea>
+    </div>
+
+    <button 
+        type="submit"
+        className="w-full bg-primary text-white font-bold py-3 px-4 rounded-md hover:bg-secondary transition-colors"
+    >
+        Envoyer le message
+    </button>
+</form>
 
                     <div className="mt-12 border-t pt-8">
                         <h2 className="text-2xl font-semibold text-primary mb-6 text-center">Autres moyens de contact</h2>
