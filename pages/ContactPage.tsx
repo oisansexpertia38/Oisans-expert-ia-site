@@ -60,6 +60,9 @@ const ContactPage: React.FC = () => {
                 return (
                     <input type={field.type} id={field.name} name={field.name} required={field.required} value={formData[field.name] || ''} onChange={handleInputChange} className={commonClasses} />
                 );
+				<input type="text" name="name" placeholder="Nom" required />
+<input type="email" name="email" placeholder="Email" required />
+<textarea name="message" placeholder="Votre message" required></textarea>
         }
     }
 
@@ -90,7 +93,7 @@ const ContactPage: React.FC = () => {
                                     <p className="mt-2 text-neutralDark/80">Votre message a bien été envoyé. Nous vous répondrons dans les plus brefs délais.</p>
                                 </div>
                             ) : (
-                                <form onSubmit={handleSubmit} className="space-y-6">
+                               <form action="https://formspree.io/f/https://formspree.io/f/xqawzzwg" method="POST">
                                     {form?.fields.map(field => (
                                         <div key={field.name}>
                                             <label htmlFor={field.name} className="block text-sm font-medium text-secondary mb-2">{field.label}{field.required && ' *'}</label>

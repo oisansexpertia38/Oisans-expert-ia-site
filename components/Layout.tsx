@@ -20,4 +20,5 @@ const Layout: React.FC = () => {
   );
 };
 
-export default Layout;
+// Si c'est une fonction ou const Layout = () => { ... }
+export default Layout;  // Ajoute ça si pas déjà là

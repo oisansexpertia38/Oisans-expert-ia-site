@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
-import './index.css';
+import './index.css';  // Import global CSS
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
