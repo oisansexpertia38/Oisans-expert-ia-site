@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { PAGES_DATA } from '../constants.ts';
 import type { FormField } from '../types.ts';
+<input type="text" name="name" placeholder="Nom" required />
+<input type="email" name="email" placeholder="Email" required />
+<textarea name="message" placeholder="Votre message" required></textarea>
 
 const ContactPage: React.FC = () => {
     const { title, intro, form, contact_info } = PAGES_DATA.contact;
@@ -60,9 +63,6 @@ const ContactPage: React.FC = () => {
                 return (
                     <input type={field.type} id={field.name} name={field.name} required={field.required} value={formData[field.name] || ''} onChange={handleInputChange} className={commonClasses} />
                 );
-				<input type="text" name="name" placeholder="Nom" required />
-<input type="email" name="email" placeholder="Email" required />
-<textarea name="message" placeholder="Votre message" required></textarea>
         }
     }
 
