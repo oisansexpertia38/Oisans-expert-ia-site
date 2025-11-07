@@ -56,7 +56,7 @@ const ContactPage: React.FC = () => {
                     </div>
                     
               <form 
-    action="https://formsubmit.co/contact@oisansexpertia.com" 
+    action="https://formsubmit.co/oisans.expert.ia@gmail.com" 
     method="POST"
     className="space-y-6"
 >
